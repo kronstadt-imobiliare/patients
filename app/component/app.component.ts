@@ -76,9 +76,8 @@ import { PatientsService } from '../service/patients.service';
                 </div>
             </div>
 
-            <p-dialog header="Kassen" [width]="'850'" [height]="'620'" [(visible)]="displayKasseDialog" [resizeable]="false" showEffect="fade" [modal]="true">
-                <div>
-                    <div style="height: 480px">
+            <p-dialog header="Kassen" [width]="'850'" [height]="'650'" [(visible)]="displayKasseDialog" [resizeable]="false" showEffect="fade" [modal]="true">
+                    <div style="height: 500px">
                         <insurance-table
                             #insuranceTable
                             [insurances]="insurances"
@@ -102,13 +101,10 @@ import { PatientsService } from '../service/patients.service';
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <footer>
-                            <button pButton label="OK" (click)="insuranceOKClick()"></button>
-                            <button type="button" pButton label="Cancel" (click)="insuranceCancelClick()"></button>
-                        </footer>
-                    </div>
-                </div>
+                <footer style="margin-left:1em">
+                    <button pButton label="OK" (click)="insuranceOKClick()"></button>
+                    <button type="button" pButton label="Cancel" (click)="insuranceCancelClick()"></button>
+                </footer>
             </p-dialog>
             <p-dialog header="Zips" [width]="'400'" [height]="'700'" [(visible)]="displayZipDialog" [resizeable]="false" showEffect="fade" [modal]="true">
                 <div>
@@ -486,8 +482,6 @@ export class AppComponent implements OnInit {
 
     patientSubmit() {
         this.patient.homepatient = this.checkboxValues.indexOf("homepatient") != -1 ? "true" : "false";
-
-        console.log(this.patient);
 
         if (this.isNewPatient) {
             this.patientsService.createPatient(this.patient).then(e => this.tab.reloadPaginator());
