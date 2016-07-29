@@ -15,7 +15,6 @@ import { Patient } from '../model/patient.model';
             [lazy]="true"
             (onLazyLoad)="loadLazy($event)"
             (onRowSelect)="onRowSelect($event)"
-            (onRowUnselect)="onRowUnselect($event)"
             (onRowDblclick)="onRowDblclick($event)"
             [rows]="rows">
             <header>Patientenliste</header>

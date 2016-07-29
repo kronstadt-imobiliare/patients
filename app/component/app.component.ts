@@ -399,9 +399,6 @@ export class AppComponent implements OnInit {
     }
 
     setSelectedPatient(patient) {
-        if (this.selectedPatient == patient)
-            this.selectedPatient = null;
-        else
             this.selectedPatient = patient;
     }
 
